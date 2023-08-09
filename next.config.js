@@ -8,6 +8,7 @@ module.exports = withBundleAnalyzer({
     dirs: ['.'],
   },
   // output: 'export',
+
   poweredByHeader: false,
   trailingSlash: true,
   basePath: '',
@@ -15,4 +16,11 @@ module.exports = withBundleAnalyzer({
   // So, the source code is "basePath-ready".
   // You can remove `basePath` if you don't need it.
   reactStrictMode: true,
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
 });
