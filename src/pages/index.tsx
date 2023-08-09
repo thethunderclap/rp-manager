@@ -54,10 +54,7 @@ const Index = () => {
       ) : (
         <div className="flex h-screen w-full flex-col items-center justify-start gap-10">
           <h4 className="text-base font-bold"> Please add your domain</h4>
-          <div className="flex w-1/2 items-center gap-10">
-            <TextInput onChange={handleInputChange} value={inputValue} />
-            <Button onClick={handleButtonClick} />
-          </div>
+
           {siteDetails ? (
             <div className="shadow-900 flex h-1/2 w-full flex-col border-2 p-4 shadow-md ">
               <div className="flex items-center">
@@ -92,7 +89,12 @@ const Index = () => {
                 </p>{' '}
               </div>
             </div>
-          ) : null}
+          ) : (
+            <div className="flex w-1/2 items-center gap-10">
+              <TextInput onChange={handleInputChange} value={inputValue} />
+              <Button onClick={handleButtonClick} />
+            </div>
+          )}
           <Button
             onClick={() => {
               if (!siteDetails)

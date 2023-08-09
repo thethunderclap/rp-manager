@@ -40,7 +40,7 @@ const Main = (props: IMainProps) => (
             </li>
             <li className="mr-6">
               <Link
-                href="/add-project/"
+                href="/step2/"
                 className="border-none text-gray-700 hover:text-gray-900"
               >
                 Step 3
