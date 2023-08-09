@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
+import DNSRecord from '@/components/DNSRecord';
 import { Meta } from '@/layouts/Meta';
 import { getCurrentDNSRecords } from '@/services/api-requests';
 import { Main } from '@/templates/Main';
@@ -43,7 +44,7 @@ const Step1 = () => {
       <div className="flex h-screen w-full flex-col items-center justify-start">
         <h1 className="text-3xl font-bold">DNS records</h1>
         {dnsRecords.length ? (
-          dnsRecords.map((record) => <li>{record.name}</li>)
+          <DNSRecord records={dnsRecords} />
         ) : (
           <p className="text-md font-normal"> No records found </p>
         )}
